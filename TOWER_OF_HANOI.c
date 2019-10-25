@@ -3,14 +3,14 @@
 #include<stdio.h>
 
 
-void toh(int, char [], char [], char []);  /*Declaration of function toh*/
+void toh(int, char [], char [], char []);  /*Declaration of function toh */ 
 
 
 int main(void)
 {
 int n;
 char A[10]="BEG", B[10]="AUX", C[10]="END";       /* BEG = Beginning Position, AUX= Auxiliary Position, END = End Position*/
-printf("Enter number of disks : ");
+printf("Enter number of disks : ");                                   /* Example 2,3 etc.*/  
 scanf("%d",&n);
 toh(n,A,B,C);
 return 0;
