@@ -1,21 +1,28 @@
-/* TOWER OF HANOI */
-#include <stdio.h>
-int main()
+/*Program Of Tower Of Hanoi Problem*/
+
+#include<stdio.h>
+
+
+void toh(int, char [], char [], char []);  /*Declaration of function toh */ 
+
+
+int main(void)
 {
-    void tower(int n,char beg,char aux,char end);
-    int n;
-    printf("Enter the number of discs : ");
-    scanf("%d",&n);
-    tower(n,'A','B','C');
-    return 0;
+int n;
+char A[10]="BEG", B[10]="AUX", C[10]="END";       /* BEG = Beginning Position, AUX= Auxiliary Position, END = End Position*/
+printf("Enter number of disks : ");                                   /* Example 2,3 etc.*/  
+scanf("%d",&n);
+toh(n,A,B,C);
+return 0;
 }
 
-void tower(int n,char beg,char aux,char end)
+void toh(int n, char BEG[10], char AUX[10], char END[10])            /* Definition of function toh*/
 {
-    if(n>=1)
-    {
-        tower(n-1,beg,end,aux);
-        printf("%c to %c\n",beg,end);
-        tower(n-1,aux,beg,end);
-    }
+if(n>=1)
+{
+toh(n-1,BEG,END,AUX);
+printf("%s to %s \n",BEG,END);
+toh(n-1,AUX,BEG,END);
+}
+
 }
